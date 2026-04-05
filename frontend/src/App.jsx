@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-// import Wizard from "./pages/Wizard";
+import Diagnostic from "./pages/Diagnostic";
 // import Dashboard from "./pages/Dashboard";
 
 function App() {
@@ -9,8 +9,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/quiz" element={<Wizard />} />
-          <Route path="/dashboard" element={<Dashboard />} /> */}
+          <Route path="/diagnostic" element={<Diagnostic />} />
+          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         </Routes>
       </Router>
     </>

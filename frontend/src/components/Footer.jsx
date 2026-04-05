@@ -31,9 +31,9 @@ export default function Footer() {
           <div>
             <h4 className="text-slate-50 font-mono text-xs uppercase tracking-[0.2em] mb-6">Platform</h4>
             <ul className="space-y-4 text-sm text-slate-400">
-              <li><Link to="/quiz" className="hover:text-sky-400 transition-colors">Run Diagnostic</Link></li>
+              <li><Link to="/diagnostic" className="hover:text-sky-400 transition-colors">Run Diagnostic</Link></li>
               <li><Link to="/dashboard" className="hover:text-sky-400 transition-colors">User Profile</Link></li>
-              <li><a href="#how-it-works" className="hover:text-sky-400 transition-colors">Documentation</a></li>
+              <li><Link to="/documentation" className="hover:text-sky-400 transition-colors">Documentation</Link></li>
             </ul>
           </div>
 

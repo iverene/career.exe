@@ -1,0 +1,26 @@
+{
+  "sectors": [
+    {
+      "name": "Engineering & Tech",
+      "subFields": [
+        { "name": "Software Development", "skills": ["React", "Node.js", "Python", "AWS", "Docker", "SQL"] },
+        { "name": "Cybersecurity", "skills": ["Pentesting", "Network Security", "SIEM", "Firewalls", "Identity Access"] },
+        { "name": "Data Science", "skills": ["Machine Learning", "Pandas", "R", "Tableau", "Statistics"] }
+      ]
+    },
+    {
+      "name": "Marketing & Creative",
+      "subFields": [
+        { "name": "Digital Marketing", "skills": ["Google Ads", "SEO", "Copywriting", "Email Marketing", "PPC"] },
+        { "name": "Graphic Design", "skills": ["Photoshop", "Illustrator", "Figma", "Branding", "UI Design"] }
+      ]
+    },
+    {
+      "name": "Healthcare & Life Sciences",
+      "subFields": [
+        { "name": "Nursing", "skills": ["Patient Care", "BLS", "Wound Care", "Medication Admin", "IV Therapy"] },
+        { "name": "Pediatrics", "skills": ["Child Psychology", "Developmental Milestones", "Neonatal Care"] }
+      ]
+    }
+  ]
+}

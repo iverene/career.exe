@@ -54,7 +54,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6">
             <Link 
-              to="/quiz"
+              to="/diagnostic"
               className="group relative inline-flex items-center justify-center px-10 py-4 font-bold text-white transition-all duration-300"
             >
               <div className="relative flex items-center bg-slate-950 px-10 py-4 rounded-full border border-slate-800 group-hover:border-sky-500 group-hover:text-sky-400 transition-all duration-300 shadow-lg">
