@@ -1,25 +1,126 @@
 {
   "sectors": [
     {
-      "name": "Engineering & Tech",
+      "name": "Engineering & Technology",
       "subFields": [
-        { "name": "Software Development", "skills": ["React", "Node.js", "Python", "AWS", "Docker", "SQL"] },
-        { "name": "Cybersecurity", "skills": ["Pentesting", "Network Security", "SIEM", "Firewalls", "Identity Access"] },
-        { "name": "Data Science", "skills": ["Machine Learning", "Pandas", "R", "Tableau", "Statistics"] }
+        { "name": "Software Development", "skills": ["Java", "Python", "C#", "C++", "React", "Node.js", "Spring Boot", "REST APIs", "Microservices", "SQL", "Git"] },
+        { "name": "Web Development", "skills": ["HTML", "CSS", "JavaScript", "TypeScript", "Vue", "Angular", "Next.js", "Responsive Design"] },
+        { "name": "Mobile Development", "skills": ["Flutter", "React Native", "Swift", "Kotlin", "iOS", "Android"] },
+        { "name": "Game Development", "skills": ["Unity", "Unreal Engine", "C#", "3D Modeling", "Game Physics"] },
+        { "name": "Data Science & Analytics", "skills": ["Python", "R", "Machine Learning", "Pandas", "Data Visualization", "Statistics", "SQL"] },
+        { "name": "Artificial Intelligence", "skills": ["Deep Learning", "NLP", "TensorFlow", "PyTorch", "Computer Vision"] },
+        { "name": "Cybersecurity", "skills": ["Ethical Hacking", "Penetration Testing", "SIEM", "Firewalls", "Encryption", "Threat Analysis"] },
+        { "name": "Cloud Computing", "skills": ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes", "Serverless"] },
+        { "name": "DevOps", "skills": ["CI/CD", "Jenkins", "Terraform", "Ansible", "Monitoring", "Automation"] },
+        { "name": "Robotics", "skills": ["ROS", "Embedded Systems", "Automation", "Control Systems"] },
+        { "name": "UI/UX Design", "skills": ["User Research", "Wireframing", "Prototyping", "Figma", "Usability Testing"] }
+      ]
+    },
+    {
+      "name": "Business & Finance",
+      "subFields": [
+        { "name": "Accounting", "skills": ["Financial Reporting", "Bookkeeping", "Taxation", "Auditing", "QuickBooks"] },
+        { "name": "Finance", "skills": ["Financial Analysis", "Budgeting", "Forecasting", "Investment Analysis", "Risk Management"] },
+        { "name": "Banking", "skills": ["Loan Processing", "Credit Analysis", "Compliance"] },
+        { "name": "Human Resources", "skills": ["Recruitment", "Payroll", "Employee Relations", "Training & Development"] },
+        { "name": "Operations", "skills": ["Process Improvement", "Supply Chain", "Logistics", "Project Management"] },
+        { "name": "Entrepreneurship", "skills": ["Business Planning", "Startup Strategy", "Market Research"] }
       ]
     },
     {
       "name": "Marketing & Creative",
       "subFields": [
-        { "name": "Digital Marketing", "skills": ["Google Ads", "SEO", "Copywriting", "Email Marketing", "PPC"] },
-        { "name": "Graphic Design", "skills": ["Photoshop", "Illustrator", "Figma", "Branding", "UI Design"] }
+        { "name": "Digital Marketing", "skills": ["SEO", "SEM", "Google Ads", "Content Marketing", "Email Marketing", "Analytics"] },
+        { "name": "Social Media", "skills": ["Content Creation", "Engagement", "Scheduling", "Analytics", "Brand Strategy"] },
+        { "name": "Graphic Design", "skills": ["Photoshop", "Illustrator", "Figma", "Branding", "Typography"] },
+        { "name": "Video Production", "skills": ["Video Editing", "Storyboarding", "Premiere Pro", "After Effects"] },
+        { "name": "Photography", "skills": ["Lighting", "Editing", "Composition", "Portrait", "Product Photography"] },
+        { "name": "Copywriting", "skills": ["SEO Writing", "Ad Copy", "Storytelling", "Editing"] }
       ]
     },
     {
       "name": "Healthcare & Life Sciences",
       "subFields": [
-        { "name": "Nursing", "skills": ["Patient Care", "BLS", "Wound Care", "Medication Admin", "IV Therapy"] },
-        { "name": "Pediatrics", "skills": ["Child Psychology", "Developmental Milestones", "Neonatal Care"] }
+        { "name": "Nursing", "skills": ["Patient Care", "IV Therapy", "Medication Administration", "BLS"] },
+        { "name": "Medical Technology", "skills": ["Lab Testing", "Microscopy", "Sample Analysis"] },
+        { "name": "Pharmacy", "skills": ["Drug Dispensing", "Pharmacology"] },
+        { "name": "Public Health", "skills": ["Epidemiology", "Health Education", "Data Analysis"] },
+        { "name": "Nutrition & Dietetics", "skills": ["Meal Planning", "Clinical Nutrition"] },
+        { "name": "Physical Therapy", "skills": ["Rehabilitation", "Exercise Therapy"] }
+      ]
+    },
+    {
+      "name": "Education & Training",
+      "subFields": [
+        { "name": "Teaching", "skills": ["Lesson Planning", "Classroom Management", "Assessment", "Curriculum Development", "Student Engagement", "Differentiated Instruction", "Educational Technology", "Public Speaking"] },
+        { "name": "E-Learning", "skills": ["Instructional Design", "LMS", "Content Creation", "SCORM", "Multimedia Editing", "Storyboarding", "Online Facilitation", "Assessment Design"] },
+        { "name": "Coaching & Mentoring", "skills": ["Guidance", "Communication", "Performance Tracking", "Goal Setting", "Active Listening", "Feedback Delivery", "Motivation Techniques"] }
+      ]
+    },
+    {
+      "name": "Hospitality & Tourism",
+      "subFields": [
+        { "name": "Hotel Management", "skills": ["Front Office", "Customer Service", "Reservations", "Housekeeping Management", "Hospitality Software", "Guest Relations", "Conflict Resolution"] },
+        { "name": "Food & Beverage", "skills": ["Cooking", "Service", "Inventory", "Food Safety", "Menu Planning", "Cost Control", "Sanitation Standards", "Customer Handling"] },
+        { "name": "Tourism", "skills": ["Tour Planning", "Ticketing", "Customer Relations", "Travel Itinerary Design", "Destination Knowledge", "Booking Systems", "Sales Techniques"] },
+        { "name": "Event Management", "skills": ["Event Planning", "Coordination", "Logistics", "Vendor Management", "Budgeting", "Time Management", "Marketing Events"] }
+      ]
+    },
+    {
+      "name": "Arts & Entertainment",
+      "subFields": [
+        { "name": "Performing Arts", "skills": ["Acting", "Dancing", "Singing", "Stage Presence", "Voice Control", "Improvisation", "Choreography Basics"] },
+        { "name": "Music Production", "skills": ["Mixing", "Recording", "Sound Design", "Audio Editing", "DAWs", "Mastering", "Beat Making"] },
+        { "name": "Creative Writing", "skills": ["Storytelling", "Scriptwriting", "Editing", "Creative Thinking", "Plot Development", "Character Building", "Proofreading"] }
+      ]
+    },
+    {
+      "name": "Construction & Trades",
+      "subFields": [
+        { "name": "Civil Engineering", "skills": ["AutoCAD", "Structural Design", "Project Planning", "Site Inspection", "Blueprint Reading", "Construction Management"] },
+        { "name": "Electrical", "skills": ["Wiring", "Troubleshooting", "Electrical Safety", "Circuit Analysis", "Installation", "Maintenance"] },
+        { "name": "Plumbing", "skills": ["Installation", "Repair", "Pipe Fitting", "Water Systems", "Maintenance", "Blueprint Reading"] },
+        { "name": "Carpentry", "skills": ["Woodworking", "Measurement", "Tool Handling", "Furniture Making", "Framing", "Finishing"] }
+      ]
+    },
+    {
+      "name": "Agriculture & Environment",
+      "subFields": [
+        { "name": "Agriculture", "skills": ["Crop Management", "Soil Analysis", "Irrigation", "Pest Control", "Farm Equipment Handling", "Harvesting Techniques"] },
+        { "name": "Environmental Science", "skills": ["Sustainability", "Conservation", "Environmental Impact Assessment", "Data Collection", "Climate Analysis"] },
+        { "name": "Fisheries", "skills": ["Aquaculture", "Marine Management", "Water Quality Monitoring", "Fish Breeding", "Sustainable Fishing"] }
+      ]
+    },
+    {
+      "name": "Legal & Public Service",
+      "subFields": [
+        { "name": "Law", "skills": ["Legal Research", "Litigation", "Contract Drafting", "Case Analysis", "Negotiation", "Legal Writing"] },
+        { "name": "Public Administration", "skills": ["Policy Analysis", "Governance", "Program Management", "Public Speaking", "Budgeting", "Community Engagement"] },
+        { "name": "Law Enforcement", "skills": ["Investigation", "Crisis Management", "Report Writing", "Surveillance", "Conflict Resolution", "Public Safety"] }
+      ]
+    },
+    {
+      "name": "Sales & Customer Service",
+      "subFields": [
+        { "name": "Retail Sales", "skills": ["Product Knowledge", "Customer Service", "POS Systems", "Upselling", "Inventory Tracking", "Sales Reporting"] },
+        { "name": "B2B Sales", "skills": ["Lead Generation", "Negotiation", "CRM", "Account Management", "Sales Strategy", "Pipeline Management"] },
+        { "name": "Customer Support", "skills": ["Communication", "Problem Solving", "Ticketing Systems", "Technical Support", "Conflict Resolution", "Customer Retention"] }
+      ]
+    },
+    {
+      "name": "Transportation & Logistics",
+      "subFields": [
+        { "name": "Logistics", "skills": ["Supply Chain", "Inventory Management", "Warehouse Operations", "Demand Planning", "Procurement"] },
+        { "name": "Driving", "skills": ["Defensive Driving", "Route Planning", "Vehicle Maintenance", "Safety Compliance", "Navigation Systems"] },
+        { "name": "Aviation", "skills": ["Flight Operations", "Aircraft Maintenance", "Navigation", "Safety Procedures", "Communication Systems"] }
+      ]
+    },
+    {
+      "name": "Media & Communications",
+      "subFields": [
+        { "name": "Journalism", "skills": ["Writing", "Interviewing", "Editing", "Research", "Fact Checking", "News Reporting"] },
+        { "name": "Broadcasting", "skills": ["Public Speaking", "Production", "Voice Control", "Script Reading", "Live Hosting"] },
+        { "name": "Public Relations", "skills": ["Media Relations", "Crisis Communication", "Press Releases", "Brand Management", "Event Promotion"] }
       ]
     }
   ]

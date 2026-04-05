@@ -1,0 +1,19 @@
+{
+  "questions": [
+    { "id": 1, "trait": "Leadership", "text": "When working in a group, I naturally take charge of organizing tasks and delegating responsibilities." },
+    { "id": 2, "trait": "Stress Tolerance", "text": "I remain calm and effective even when faced with tight deadlines or unexpected obstacles." },
+    { "id": 3, "trait": "Communication", "text": "I can explain complex ideas clearly to people who may not have a technical background." },
+    { "id": 4, "trait": "Analytical Thinking", "text": "I prefer to make decisions based on data and logical reasoning rather than intuition." },
+    { "id": 5, "trait": "Empathy", "text": "I am highly aware of my teammates' emotions and try to support them when they are overwhelmed." },
+    { "id": 6, "trait": "Adaptability", "text": "I find it easy to switch gears and adjust my strategy when project requirements suddenly change." },
+    { "id": 7, "trait": "Collaboration", "text": "I believe that group success is more important than receiving individual credit for a task." },
+    { "id": 8, "trait": "Conflict Resolution", "text": "I am comfortable mediating disagreements between colleagues to find a middle ground." },
+    { "id": 9, "trait": "Time Management", "text": "I consistently prioritize high-impact tasks and manage my daily schedule without supervision." },
+    { "id": 10, "trait": "Creativity", "text": "I enjoy brainstorming unconventional solutions to problems that others consider 'stuck'." },
+    { "id": 11, "trait": "Attention to Detail", "text": "I rarely overlook small errors and take pride in the precision of my final work." },
+    { "id": 12, "trait": "Self-Motivation", "text": "I am driven to complete my work to a high standard without needing external pressure or rewards." },
+    { "id": 13, "trait": "Public Speaking", "text": "I feel confident presenting my ideas or progress reports in front of a large audience." },
+    { "id": 14, "trait": "Critical Observation", "text": "I quickly notice patterns or inefficiencies in workflows and suggest improvements." },
+    { "id": 15, "trait": "Resilience", "text": "I view negative feedback as a valuable tool for growth rather than a personal setback." }
+  ]
+}
