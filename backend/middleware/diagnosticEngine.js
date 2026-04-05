@@ -9,25 +9,77 @@ const runDiagnostic = async (userData) => {
     const { industry, hardSkills, softSkills, intent } = userData;
 
     const prompt = `
-        You are career.exe, a high-precision career diagnostic AI.
-        Analyze this candidate:
-        - Industry: ${industry}
-        - Current Hard Skills: ${hardSkills}
-        - Soft Skill Profile (Scores 1-5): ${JSON.stringify(softSkills)}
-        - Direct Career Intent: "${intent}"
+You are career.exe, a high-precision career diagnostic AI.
+Your task is to generate a structured "Career Report" based ONLY on the provided candidate data.
 
-        Return a strictly formatted JSON object:
-        {
-          "topMatches": [{"title": "Role", "description": "...", "matchReason": "..."}],
-          "readinessScore": 85,
-          "gapAnalysis": {"matched": ["Skill A"], "missing": ["Skill B"]},
-          "strategicPlan": {
-            "technicalSprint": {"focus": "Skill", "action": "Step", "impact": "Why"},
-            "softSkillLeverage": {"powerSkill": "Trait", "blindSpot": "Trait", "exercise": "Action"},
-            "portfolioStrategy": {"projectConcept": "Idea", "networkingTip": "Who"}
-          }
-        }
-    `;
+=== INPUT DATA ===
+- Industry: ${industry}
+- Current Hard Skills: ${hardSkills}
+- Soft Skill Profile (Scores 1-5): ${JSON.stringify(softSkills)}
+- Direct Career Intent: "${intent}"
+
+=== OUTPUT REQUIREMENTS ===
+Return ONLY a valid JSON object. No explanations, no extra text.
+
+=== OUTPUT STRUCTURE ===
+{
+  "topMatches": {
+    "primary": {
+      "title": "Primary role name",
+      "description": "Short explanation of the role",
+      "matchReason": "Why this is the strongest match based on intent"
+    },
+    "pivots": [
+      {
+        "title": "Alternative role 1",
+        "description": "Short explanation",
+        "matchReason": "How it leverages existing skills"
+      },
+      {
+        "title": "Alternative role 2",
+        "description": "Short explanation",
+        "matchReason": "How it leverages existing skills"
+      }
+    ]
+  },
+  "readiness": {
+    "score": 76,
+    "label": "76% Ready",
+    "gapAnalysis": {
+      "whatYouHave": ["List of matched skills"],
+      "industryDemand": ["List of required skills"],
+      "missing": ["Critical missing skills"]
+    }
+  },
+  "strategicPlan": {
+    "technicalSprint": {
+      "focus": "Most important missing technical skill",
+      "action": "Specific measurable learning plan (include time commitment)",
+      "impact": "Clear explanation of career impact"
+    },
+    "softSkillLeverage": {
+      "powerSkill": "Highest-rated soft skill",
+      "howToUse": "How to leverage it in job applications or roles",
+      "blindSpot": "Lowest-rated soft skill",
+      "exercise": "Practical improvement activity"
+    },
+    "portfolioStrategy": {
+      "projectConcept": "Specific real-world project idea aligned with target role",
+      "executionTip": "What features or tools to include",
+      "networkingTip": "Who to connect with or where to showcase"
+    }
+  }
+}
+
+=== RULES ===
+- Ensure readiness score is realistic (0–100) based on skill overlap.
+- Primary match MUST align strongly with the user's intent.
+- Pivot roles MUST reuse existing skills in different career paths.
+- Be concise but specific (no vague advice).
+- Do NOT repeat the same skills across all sections unnecessarily.
+- Ensure all arrays contain meaningful items (minimum 3 where applicable).
+- Output must always be complete and valid JSON.
+`;
 
     const response = await openai.chat.completions.create({
         model: 'AtlaAI/Selene-1-Mini-Llama-3.1-8B',

@@ -6,7 +6,6 @@ router.post('/', async (req, res) => {
     try {
         const { userData } = req.body;
         
-        // Basic validation matching insightsRoutes pattern
         if (!userData) {
             return res.status(400).json({ error: "Invalid diagnostic data" });
         }
