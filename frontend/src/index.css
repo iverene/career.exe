@@ -1,1 +1,48 @@
 @import "tailwindcss";
+
+@theme {
+
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--color-sky-400); }
+  }
+
+  /* Define the animation shorthand names */
+  --animation-blob: blob 7s infinite;
+  --animation-typing: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  .animate-typing {
+    animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #38bdf8; }
+  }
+  
+}
