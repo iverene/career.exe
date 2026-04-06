@@ -9,12 +9,15 @@ app.set('trust proxy', 1);
 app.use(express.json());
 
 // CORS configuration
-// backend/index.js
 app.use(cors({
-  origin: ['https://career-exe.vercel.app', 'http://localhost:5173'],
-  methods: ["POST", "GET", "OPTIONS"],
-  credentials: true
+  origin: ["https://career-exe.vercel.app", "http://localhost:5173"],
+  methods: ["GET", "POST", "OPTIONS"],
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
+// Explicitly handle preflight requests
+app.options('*', cors());
 
 // Rate limiting to prevent API abuse
 const limiter = rateLimit({
