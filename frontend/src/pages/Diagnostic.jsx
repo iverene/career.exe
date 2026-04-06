@@ -82,16 +82,23 @@ export default function Diagnostic() {
   };
 
   const handleNextStep = () => {
+    setStepAttempted(true);
     if (canProgress()) {
+      setStepAttempted(false);
       if (step < 3) {
         setStep((s) => s + 1);
-        window.scrollTo(0, 0); // Reset scroll for better UX
+        window.scrollTo(0, 0);
       } else {
         handleComplete();
       }
-    } else {
-      alert("Please complete all required fields before proceeding.");
     }
+  };
+
+  const handleComplete = () => {
+    // Save the diagnostic results to localStorage
+    localStorage.setItem("career_diagnostic", JSON.stringify(formData));
+    // Redirect to the dashboard for analysis
+    navigate("/dashboard");
   };
 
   return (

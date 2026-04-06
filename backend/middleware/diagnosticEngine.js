@@ -1,35 +1,36 @@
-const OpenAI = require('openai');
+const OpenAI = require("openai");
 
 const openai = new OpenAI({
-    baseUrl: process.env.BASE_URL,
-    apiKey: process.env.OPENAI_API_KEY,
+  baseURL: process.env.BASE_URL,
+  apiKey: process.env.FEATHERLESS_API_KEY,
+  timeout: 60000,
 });
 
 const runDiagnostic = async (userData) => {
-    const { industry, hardSkills, softSkills, intent } = userData;
+  console.log("Using Provider URL:", process.env.BASE_URL);
+  const { industry, hardSkills, softSkills, intent } = userData;
 
-    const prompt = `
+  const prompt = `
 You are career.exe, a high-precision career diagnostic AI.
 Your task is to generate a structured "Career Report" based ONLY on the provided candidate data.
 
 === INPUT DATA ===
-- Industry: ${industry}
-- Current Hard Skills: ${hardSkills}
-- Soft Skill Profile (Scores 1-5): ${JSON.stringify(softSkills)}
-- Direct Career Intent: "${intent}"
+- Industry: ${JSON.stringify(industry)}
+- Hard Skills: ${JSON.stringify(hardSkills)}
+- Soft Skill Scores (1-5): ${JSON.stringify(softSkills)}
+- Intent: "${intent}"
 
 === OUTPUT REQUIREMENTS ===
 Return ONLY a valid JSON object. No explanations, no extra text.
 
 === OUTPUT STRUCTURE ===
 {
-  "topMatches": {
-    "primary": {
+  "topMatches": [
+    {
       "title": "Primary role name",
       "description": "Short explanation of the role",
       "matchReason": "Why this is the strongest match based on intent"
     },
-    "pivots": [
       {
         "title": "Alternative role 1",
         "description": "Short explanation",
@@ -40,8 +41,7 @@ Return ONLY a valid JSON object. No explanations, no extra text.
         "description": "Short explanation",
         "matchReason": "How it leverages existing skills"
       }
-    ]
-  },
+],
   "readiness": {
     "score": 76,
     "label": "76% Ready",
@@ -81,17 +81,26 @@ Return ONLY a valid JSON object. No explanations, no extra text.
 - Output must always be complete and valid JSON.
 `;
 
+  try {
     const response = await openai.chat.completions.create({
-        model: 'AtlaAI/Selene-1-Mini-Llama-3.1-8B',
-        max_tokens: 4096,
-        messages: [
-            { role: "system", content: "You are a professional career architect." },
-            { role: "user", content: prompt }
-        ],
-        response_format: { type: "json_object" },
+      model: 'meta-llama/Meta-Llama-3.1-8B-Instruct',
+  max_tokens: 2048,
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are a professional career architect that outputs strictly in JSON.",
+        },
+        { role: "user", content: prompt },
+      ],
+      response_format: { type: "json_object" },
     });
 
     return JSON.parse(response.choices[0].message.content);
+  } catch (error) {
+    console.error("AI Engine Error:", error.message);
+    throw new Error("Failed to synthesize diagnostic data.");
+  }
 };
 
 module.exports = { runDiagnostic };
