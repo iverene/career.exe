@@ -21,30 +21,31 @@ Your task is to generate a structured "Career Report" based ONLY on the provided
 - Intent: "${intent}"
 
 === OUTPUT REQUIREMENTS ===
-Return ONLY a valid JSON object. No explanations, no extra text.
+1. Return ONLY a valid JSON object. No explanations, no extra text.
+2. Calculate a REALISTIC "readiness.score" (0-100) based on the overlap between Current Hard Skills and Industry Demand.
 
 === OUTPUT STRUCTURE ===
 {
   "topMatches": [
     {
       "title": "Primary role name",
-      "description": "Short explanation of the role",
+      "description": "Detailed explanation of the role",
       "matchReason": "Why this is the strongest match based on intent"
     },
       {
         "title": "Alternative role 1",
-        "description": "Short explanation",
+        "description": "Detailed explanation",
         "matchReason": "How it leverages existing skills"
       },
       {
         "title": "Alternative role 2",
-        "description": "Short explanation",
+        "description": "Detailed explanation",
         "matchReason": "How it leverages existing skills"
       }
 ],
   "readiness": {
-    "score": 76,
-    "label": "76% Ready",
+    "score": 0, 
+    "label": "e.g., Highly Compatible",
     "gapAnalysis": {
       "whatYouHave": ["List of matched skills"],
       "industryDemand": ["List of required skills"],

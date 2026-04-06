@@ -21,7 +21,7 @@ export default function Navbar() {
         
         {/* Right: Profile Shortcut */}
         <Link 
-          to="/dashboard"
+          to="/profile"
           className="p-2 rounded-full border border-slate-800 bg-slate-900 text-slate-400 hover:text-sky-400 hover:border-sky-500/50 transition-all hover:shadow-[0_0_15px_rgba(56,189,248,0.2)]"
         >
           <User size={20} />
