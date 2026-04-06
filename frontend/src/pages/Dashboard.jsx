@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import StrategyCard from '../components/StrategyCard';
+import StrategyCard from "../components/StrategyCard";
 
 export default function Dashboard() {
   const [loading, setLoading] = useState(true);
@@ -33,7 +33,6 @@ export default function Dashboard() {
       );
     }, 1200);
 
-    // 2. Fetch results from backend (Matching LoveHue pattern)
     const fetchResults = async () => {
       try {
         const storedData = localStorage.getItem("career_diagnostic");
@@ -42,14 +41,14 @@ export default function Dashboard() {
           return;
         }
 
-        const response = await fetch(
-          "http://localhost:5000/api/career/analyze",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ userData: JSON.parse(storedData) }),
-          },
-        );
+        const API_URL =
+          import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+
+        const response = await fetch(`${API_URL}/api/career/analyze`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ userData: JSON.parse(storedData) }),
+        });
 
         const data = await response.json();
         setResults(data);
@@ -199,11 +198,9 @@ export default function Dashboard() {
                     </div>
                   )}
                 </div>
-
-                
               </div>
               <div className="lg:col-span-3 space-y-8">
-{/* Strategic Pillars */}
+                {/* Strategic Pillars */}
                 <section className="space-y-6">
                   <h2 className="text-sm font-mono text-slate-500 uppercase tracking-[0.2em] px-2">
                     Strategic_Execution_Plan
@@ -252,5 +249,3 @@ export default function Dashboard() {
     </div>
   );
 }
-
-

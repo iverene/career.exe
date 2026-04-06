@@ -9,10 +9,27 @@ app.set('trust proxy', 1);
 app.use(express.json());
 
 // CORS configuration
+const allowedOrigins = [
+  'https://career-exe.vercel.app', // Your production frontend
+  'http://localhost:5173',        // Your local development frontend (usually 5173 for Vite)
+  'http://localhost:3000'         // Your local development frontend (usually 3000 for CRA)
+];
+
 app.use(cors({
-    origin: ["http://localhost:5173", "https://career-exe.vercel.app"],
-    credentials: true
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+app.options('*', cors());
 
 // Rate limiting to prevent API abuse
 const limiter = rateLimit({
