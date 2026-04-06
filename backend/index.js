@@ -12,6 +12,7 @@ app.use(express.json());
 // backend/index.js
 app.use(cors({
   origin: ['https://career-exe.vercel.app', 'http://localhost:5173'],
+  methods: ["POST", "GET", "OPTIONS"],
   credentials: true
 }));
 
@@ -31,9 +32,9 @@ app.use('/', (req, res) => {
     res.send('career.exe Backend Running');
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => console.log(`Local server on ${PORT}`));
+}
 
 module.exports = app;
