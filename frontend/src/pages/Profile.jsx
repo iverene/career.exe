@@ -19,6 +19,14 @@ export default function Profile() {
     if (savedResults) setResults(JSON.parse(savedResults));
   }, []);
 
+  const handleEdit = () => {
+    if (answers) {
+      navigate('/diagnostic', { state: { editData: answers } });
+    } else {
+      navigate('/diagnostic');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#020617] text-slate-50 font-['Plus_Jakarta_Sans']">
       <Navbar />
@@ -50,7 +58,7 @@ export default function Profile() {
                   <p className="text-slate-500 text-sm">Your raw system parameters.</p>
                 </div>
                 <button 
-                  onClick={() => navigate('/diagnostic')}
+                  onClick={handleEdit}
                   className="flex items-center gap-2 px-4 py-2 bg-sky-500/10 text-sky-400 rounded-xl border border-sky-500/20 hover:bg-sky-500/20 transition-all text-xs font-mono"
                 >
                   <Edit3 size={14} /> EDIT_INPUTS

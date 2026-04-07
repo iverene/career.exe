@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { ArrowRight, ArrowLeft, X, Target, Plus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../components/Navbar";
@@ -7,18 +7,23 @@ import data from "../data/DiagnosticData.json";
 import softSkillData from "../data/SoftSkillsData.json";
 
 export default function Diagnostic() {
+  const location = useLocation();
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [stepAttempted, setStepAttempted] = useState(false);
 
+  
+
   // Updated Form State to support multiple selections
-  const [formData, setFormData] = useState({
-    industry: [],
-    subField: [],
-    hardSkills: [],
-    softSkills: Array(15).fill(null),
-    intent: "",
-  });
+  const [formData, setFormData] = useState(
+    location.state?.editData || {
+      industry: [],
+      subField: "",
+      hardSkills: [],
+      softSkills: Array(15).fill(null),
+      intent: ""
+    }
+  );
 
   const [customSectors, setCustomSectors] = useState([]);
   const [customNiches, setCustomNiches] = useState([]);
@@ -64,6 +69,7 @@ export default function Diagnostic() {
       .filter((sf) => formData.subField.includes(sf.name))
       .flatMap((sf) => sf.skills);
   };
+
 
   const canProgress = () => {
     if (step === 1) {
@@ -297,10 +303,6 @@ export default function Diagnostic() {
                 </h3>
                 <p className="text-slate-300 text-lg font-light leading-relaxed">
                   Evaluate your typical responses to professional scenarios.
-                  <br />
-                  <span className="text-slate-500 text-sm italic">
-                    Scale: 1 (Strongly Disagree) — 5 (Strongly Agree)
-                  </span>
                 </p>
               </div>
 
