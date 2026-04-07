@@ -11,8 +11,8 @@ const runDiagnostic = async (userData) => {
   const { industry, hardSkills, softSkills, intent } = userData;
 
   const prompt = `
-You are career.exe, a high-precision career diagnostic AI.
-Your task is to generate a structured "Career Report" based ONLY on the provided candidate data.
+You are career.exe, a high-precision AI career diagnostic system. 
+Your task is to generate a structured, actionable "Career Report" based ONLY on the candidate data provided.
 
 === INPUT DATA ===
 - Industry: ${JSON.stringify(industry)}
@@ -21,65 +21,64 @@ Your task is to generate a structured "Career Report" based ONLY on the provided
 - Intent: "${intent}"
 
 === OUTPUT REQUIREMENTS ===
-1. Return ONLY a valid JSON object. No explanations, no extra text.
-2. Calculate a REALISTIC "readiness.score" (0-100) based on the overlap between Current Hard Skills and Industry Demand.
+1. Return ONLY a valid JSON object. Do not include explanations, comments, or extra text.
+2. Ensure that all arrays have meaningful items; include at least 3 items where applicable.
+3. Provide actionable, specific, and measurable recommendations—no vague advice.
 
 === OUTPUT STRUCTURE ===
 {
   "topMatches": [
     {
       "title": "Primary role name",
-      "description": "Detailed explanation of the role",
-      "matchReason": "Why this is the strongest match based on intent"
+      "description": "Detailed explanation of the role, responsibilities, and career trajectory",
+      "matchReason": "Why this role strongly matches the user's intent and current skillset"
     },
-      {
-        "title": "Alternative role 1",
-        "description": "Detailed explanation",
-        "matchReason": "How it leverages existing skills"
-      },
-      {
-        "title": "Alternative role 2",
-        "description": "Detailed explanation",
-        "matchReason": "How it leverages existing skills"
-      }
-],
+    {
+      "title": "Alternative role 1",
+      "description": "Detailed explanation of the role",
+      "matchReason": "How this role leverages existing skills differently"
+    },
+    {
+      "title": "Alternative role 2",
+      "description": "Detailed explanation of the role",
+      "matchReason": "How this role leverages existing skills differently"
+    }
+  ],
   "readiness": {
-    "score": 0, 
-    "label": "e.g., Highly Compatible",
+    "score": "Realistic readiness score (0-100)",
     "gapAnalysis": {
-      "whatYouHave": ["List of matched skills"],
-      "industryDemand": ["List of required skills"],
-      "missing": ["Critical missing skills"]
+      "whatYouHave": ["List of matched skills with industry relevance"],
+      "industryDemand": ["Full list of required skills for top roles"],
+      "missing": ["Critical missing skills to acquire for readiness"]
     }
   },
   "strategicPlan": {
     "technicalSprint": {
       "focus": "Most important missing technical skill",
-      "action": "Specific measurable learning plan (include time commitment)",
-      "impact": "Clear explanation of career impact"
+      "action": "Specific, measurable learning plan with estimated time commitment",
+      "impact": "Clear explanation of how acquiring this skill will improve career readiness"
     },
     "softSkillLeverage": {
       "powerSkill": "Highest-rated soft skill",
-      "howToUse": "How to leverage it in job applications or roles",
+      "howToUse": "Practical advice on leveraging this skill in roles or applications",
       "blindSpot": "Lowest-rated soft skill",
-      "exercise": "Practical improvement activity"
+      "exercise": "Actionable activity to improve the blind spot skill"
     },
     "portfolioStrategy": {
-      "projectConcept": "Specific real-world project idea aligned with target role",
-      "executionTip": "What features or tools to include",
-      "networkingTip": "Who to connect with or where to showcase"
+      "projectConcept": "Specific, real-world project idea aligned with the target role",
+      "executionTip": "Recommended tools, features, or approaches to implement the project",
+      "networkingTip": "Suggestions on who to connect with or where to showcase the project"
     }
   }
 }
 
 === RULES ===
-- Ensure readiness score is realistic (0–100) based on skill overlap.
 - Primary match MUST align strongly with the user's intent.
-- Pivot roles MUST reuse existing skills in different career paths.
-- Be concise but specific (no vague advice).
-- Do NOT repeat the same skills across all sections unnecessarily.
-- Ensure all arrays contain meaningful items (minimum 3 where applicable).
-- Output must always be complete and valid JSON.
+- Alternative roles MUST reuse existing skills in different career paths.
+- Be concise but specific; avoid vague or generic advice.
+- Do NOT repeat the same skills unnecessarily across sections.
+- Ensure output is always complete, valid JSON.
+- Prioritize actionable insights and measurable steps the user can take.
 `;
 
   try {
