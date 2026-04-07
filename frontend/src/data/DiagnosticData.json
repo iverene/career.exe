@@ -1,7 +1,7 @@
 {
   "sectors": [
     {
-      "name": "Engineering & Technology",
+      "name": "Technology",
       "subFields": [
         { "name": "Software Development", "skills": ["Java", "Python", "C#", "C++", "React", "Node.js", "Spring Boot", "REST APIs", "Microservices", "SQL", "Git"] },
         { "name": "Web Development", "skills": ["HTML", "CSS", "JavaScript", "TypeScript", "Vue", "Angular", "Next.js", "Responsive Design"] },
@@ -14,6 +14,17 @@
         { "name": "DevOps", "skills": ["CI/CD", "Jenkins", "Terraform", "Ansible", "Monitoring", "Automation"] },
         { "name": "Robotics", "skills": ["ROS", "Embedded Systems", "Automation", "Control Systems"] },
         { "name": "UI/UX Design", "skills": ["User Research", "Wireframing", "Prototyping", "Figma", "Usability Testing"] }
+      ]
+    },
+    {
+    "name": "Engineering",
+    "subFields": [
+      { "name": "Robotics", "skills": ["ROS", "Embedded Systems", "Automation", "Control Systems", "Sensors", "Actuators"] },
+      { "name": "Electrical Engineering", "skills": ["Circuit Design", "PCB Design", "Power Systems", "Electronics", "Troubleshooting"] },
+      { "name": "Mechanical Engineering", "skills": ["CAD", "Thermodynamics", "Fluid Mechanics", "Mechanical Design", "Simulation"] },
+      { "name": "Civil Engineering", "skills": ["AutoCAD", "Structural Design", "Construction Management", "Surveying", "Site Planning"] },
+      { "name": "Industrial Engineering", "skills": ["Process Optimization", "Lean Manufacturing", "Operations Research", "Quality Control"] },
+      { "name": "Embedded Systems", "skills": ["Microcontrollers", "C Programming", "IoT", "Firmware Development", "Hardware Integration"] }
       ]
     },
     {
