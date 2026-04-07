@@ -17,7 +17,7 @@ app.use(cors({
 }));
 
 // Explicitly handle preflight requests
-app.options('*', cors());
+app.options('/*', cors());
 
 // Rate limiting to prevent API abuse
 const limiter = rateLimit({
