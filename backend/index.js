@@ -16,9 +16,6 @@ app.use(cors({
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
-// Explicitly handle preflight requests
-app.options('/*', cors());
-
 // Rate limiting to prevent API abuse
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, 
@@ -29,7 +26,7 @@ const limiter = rateLimit({
 });
 
 const careerRoutes = require('./routes/careerRoutes');
-app.use('/api/career/analyze', limiter, careerRoutes); // Apply limiter to AI route
+app.use('/api/career/analyze', limiter, careerRoutes, cors); // Apply limiter to AI route
 
 app.use('/', (req, res) => {
     res.send('career.exe Backend Running');
