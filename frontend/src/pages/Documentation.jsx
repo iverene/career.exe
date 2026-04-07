@@ -7,7 +7,7 @@ export default function Documentation () {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100 font-sans">
       <Navbar />
-      <main className="max-w-5xl mx-auto px-4 py-12 md:px-8">
+      <main className="max-w-5xl mx-auto px-4 py-20 md:px-8">
         <section className="mb-12 border-l-4 border-blue-500 pl-6 py-2 bg-blue-900/10 rounded-r-lg">
           <h1 className="text-3xl md:text-4xl font-extrabold mb-2">Project Documentation: career.exe</h1>
           <p className="text-blue-400 font-medium">AI-Powered Skill Mapping & Career Diagnostics</p>
