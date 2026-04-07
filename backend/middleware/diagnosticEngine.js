@@ -45,7 +45,6 @@ Your task is to generate a structured, actionable "Career Report" based ONLY on 
     }
   ],
   "readiness": {
-    "score": "Realistic readiness score (0-100)",
     "gapAnalysis": {
       "whatYouHave": ["List of matched skills with industry relevance"],
       "industryDemand": ["Full list of required skills for top roles"],
